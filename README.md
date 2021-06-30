@@ -2,7 +2,7 @@
 Tecnology: C# / .Net Core
 
 ## Problem
-Generate two API's, one for saving the card of a costumer and other to validate the token of this card. With a algorith to generate the token.
+Develop two API's, one to save the customer's card and another to validate the generated token of your card. Along with an algorithm for token generation.
 
 ### API that receive customer card and save it on the db
 

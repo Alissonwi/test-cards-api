@@ -1,0 +1,15 @@
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\bin\Debug\net5.0\Cards.Infra.deps.json
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\bin\Debug\net5.0\Cards.Infra.dll
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\bin\Debug\net5.0\ref\Cards.Infra.dll
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\bin\Debug\net5.0\Cards.Infra.pdb
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\Cards.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\Cards.Infra.AssemblyInfoInputs.cache
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\Cards.Infra.AssemblyInfo.cs
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\Cards.Infra.csproj.CoreCompileInputs.cache
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\Cards.Infra.dll
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\ref\Cards.Infra.dll
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\Cards.Infra.pdb
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\bin\Debug\net5.0\Cards.Infra.runtimeconfig.json
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\bin\Debug\net5.0\Cards.Infra.runtimeconfig.dev.json
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\Cards.Infra.genruntimeconfig.cache
+C:\Users\115020\Desktop\Cards.Api\Card.Infra\obj\Debug\net5.0\Cards.Infra.csprojAssemblyReference.cache

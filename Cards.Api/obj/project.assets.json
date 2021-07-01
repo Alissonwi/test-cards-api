@@ -5739,11 +5739,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\115020\\Desktop\\Cards.Api\\Cards.Api\\Cards.Api.csproj",
+      "projectUniqueName": "C:\\Users\\115020\\Desktop\\Teste\\test-cards-api\\Cards.Api\\Cards.Api.csproj",
       "projectName": "Cards.Api",
-      "projectPath": "C:\\Users\\115020\\Desktop\\Cards.Api\\Cards.Api\\Cards.Api.csproj",
+      "projectPath": "C:\\Users\\115020\\Desktop\\Teste\\test-cards-api\\Cards.Api\\Cards.Api.csproj",
       "packagesPath": "C:\\Users\\115020\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\115020\\Desktop\\Cards.Api\\Cards.Api\\obj\\",
+      "outputPath": "C:\\Users\\115020\\Desktop\\Teste\\test-cards-api\\Cards.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5764,8 +5764,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\115020\\Desktop\\Cards.Api\\Card.Infra\\Cards.Infra.csproj": {
-              "projectPath": "C:\\Users\\115020\\Desktop\\Cards.Api\\Card.Infra\\Cards.Infra.csproj"
+            "C:\\Users\\115020\\Desktop\\Teste\\test-cards-api\\Card.Infra\\Cards.Infra.csproj": {
+              "projectPath": "C:\\Users\\115020\\Desktop\\Teste\\test-cards-api\\Card.Infra\\Cards.Infra.csproj"
             }
           }
         }

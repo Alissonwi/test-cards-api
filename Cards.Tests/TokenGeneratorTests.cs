@@ -23,7 +23,7 @@ namespace Cards.Tests
 
         [Theory]
         [InlineData(new int[] {4, 5, 1, 2, 3})]
-        public void ReturnListFromAIntegerListAfterRoutatingTheNumbersFromList(
+        public void ReturnListFromAIntegerListAfterRoutatingTheNumbersFromListInArrange(
             int[] expectedTokenList)
         {
             List<int> numbers = new();
@@ -36,6 +36,19 @@ namespace Cards.Tests
             var generatedTokenList = TokenGenerator.GenerateToken(numbers, 2);
 
             Assert.Equal(expectedTokenList.ToList(), generatedTokenList);
+        }
+
+        [Theory]
+        [InlineData(new int[] { 3, 4, 5 }, new int[] { 4, 5, 3 }, 2)]
+        [InlineData(new int[] { 1, 2, 3 }, new int[] { 2, 3, 1 }, 2)]
+        public void ReturnListFromAIntegerListAfterRoutatingTheNumbersFromList(
+            int[] parameterList,
+            int[] expectedList,
+            int rotations)
+        {
+            var generatedList = TokenGenerator.GenerateToken(parameterList.ToList(), rotations);
+
+            Assert.Equal(expectedList.ToList(), generatedList);
         }
     }
 }

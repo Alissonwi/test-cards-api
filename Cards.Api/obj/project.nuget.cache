@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JXmIolV0HYAMx4FZwRLR8kSdOXovFSMlSjEnCwzP1LUMNGz9oQfMzBpL3ecdtGKzh/Y+LnwVxMmcjehrvwQ2Cw==",
+  "dgSpecHash": "G1uyVwLnOF3d2ReUJrDmKNiVZI2dx5FddqgO9ro5PHD9aF7es2OVxKC81iMNUc3kMX3LfV6knyNEPnD0iuONuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\115020\\Desktop\\Cards.Api\\Cards.Api\\Cards.Api.csproj",
+  "projectFilePath": "C:\\Users\\115020\\Desktop\\Teste\\test-cards-api\\Cards.Api\\Cards.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\115020\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\115020\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

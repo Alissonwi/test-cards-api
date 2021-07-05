@@ -1,0 +1,5 @@
+﻿.vs
+Card.Infra/obj
+Cards.Api/obj
+Cards.Tests/obj
+Token.Api/obj

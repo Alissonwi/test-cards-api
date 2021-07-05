@@ -1,4 +1,8 @@
 using Cards.Infra.Context;
+using Cards.Infra.Interfaces;
+using Cards.Infra.Mapping;
+using Cards.Infra.Repositories;
+using Cards.Infra.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +25,10 @@ namespace Token.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CardContext>(options => options.UseSqlite(Configuration.GetConnectionString("SqliteConnectionString")));
+            services.AddScoped<ICardRepository, CardRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ICardService, CardService>();
+            services.AddAutoMapper(typeof(ResourceToModelProfile));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

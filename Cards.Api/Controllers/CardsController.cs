@@ -1,11 +1,12 @@
-﻿using Cards.Infra.Context;
-using Cards.Infra.Entities;
+﻿using AutoMapper;
+using Cards.Infra.Extensions;
+using Cards.Infra.Interfaces;
+using Cards.Infra.Models;
+using Cards.Infra.Resources;
 using Cards.Infra.Utils;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,60 +16,50 @@ namespace Cards.Api.Controllers
     [Route("[controller]")]
     public class CardsController : ControllerBase
     {
-        private readonly CardContext _context;
-
         private readonly ILogger<CardsController> _logger;
 
-        public CardsController(ILogger<CardsController> logger, CardContext context)
+        private readonly ICardService _cardService;
+
+        private readonly IMapper _mapper;
+
+        public CardsController(ILogger<CardsController> logger, ICardService cardService, IMapper mapper)
         {
             _logger = logger;
-            _context = context;
+            _cardService = cardService;
+            _mapper = mapper;
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCostumerCard(int costumerId, string cardNumber, string CVV)
+        public async Task<IActionResult> CreateCostumerCard([FromBody] SaveCardResource resource)
         {
             try
             {
-                if (costumerId == 0 || string.IsNullOrEmpty(cardNumber) || string.IsNullOrEmpty(CVV))
+                if (ModelState.IsValid)
                 {
-                    return ValidationProblem("All the attributes need to have a value");
+                    if (!resource.cardNumber.All(char.IsDigit) || !resource.CVV.All(char.IsDigit))
+                    {
+                        return ValidationProblem("Only numbers is accepted for card number and CVV");
+                    }
+
+                    var card = _mapper.Map<SaveCardResource, Card>(resource);
+
+                    card.TokenRegistrationDate = DateTime.Now;
+
+                    var token = TokenGenerator.GetTokenFromCardNumber(resource.cardNumber, int.Parse(resource.CVV));
+
+                    var result = await _cardService.SaveAsync(card);
+
+                    if (!result.Success)
+                        return BadRequest(result.Message);
+
+                    return Ok(new
+                    {
+                        RegistrationDate = card.TokenRegistrationDate,
+                        Token = token,
+                        CardId = card.CardId
+                    });
                 }
-            
-                if (cardNumber.Length > 16 || cardNumber.Length < 4)
-                {
-                    return ValidationProblem("The number of characters for card number has to be between 4 and 16");
-                }
-
-                if (CVV.Length > 5)
-                {
-                    return ValidationProblem("The number of characters for CVV has to be 5 or less");
-                }
-
-                if (!cardNumber.All(char.IsDigit) || !CVV.All(char.IsDigit))
-                {
-                    return ValidationProblem("Only numbers is accepted for card number and CVV");
-                }
-
-                var token = TokenGenerator.GetTokenFromCardNumber(cardNumber, int.Parse(CVV));
-
-                var card = new Card
-                {
-                    CardNumber = long.Parse(cardNumber),
-                    CostumerId = costumerId,
-                    TokenRegistrationDate = DateTime.Now
-                };
-
-                _context.Cards.Add(card);
-
-                await _context.SaveChangesAsync();
-
-                return Ok(new
-                {
-                    RegistrationDate = card.TokenRegistrationDate,
-                    Token = token,
-                    CardId = card.CardId
-                });
+                return BadRequest(ModelState.GetErrorMessages());
             }
             catch (Exception e)
             {

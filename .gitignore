@@ -1,0 +1,9 @@
+﻿Card.Infra/bin
+Card.Infra/obj
+Cards.Api/bin
+Cards.Api/obj
+Cards.Tests/bin
+Cards.Tests/obj
+Token.Api/bin
+Token.Api/obj
+.vs

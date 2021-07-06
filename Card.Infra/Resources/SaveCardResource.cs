@@ -5,6 +5,7 @@ namespace Cards.Infra.Resources
     public class SaveCardResource
     {
         [Required]
+        [Range(1, 999999999)]
         public int costumerId { get; set; }
 
         [Required]

@@ -36,6 +36,11 @@ namespace Cards.Api.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    if (resource.costumerId == 0)
+                    {
+                        return ValidationProblem("CostumerId can not be 0.");
+                    }
+
                     if (!resource.cardNumber.All(char.IsDigit) || !resource.CVV.All(char.IsDigit))
                     {
                         return ValidationProblem("Only numbers is accepted for card number and CVV");
